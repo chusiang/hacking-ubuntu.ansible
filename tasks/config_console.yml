@@ -4,29 +4,29 @@
 - name: get my tuxENV
   git:
     repo: git@github.com:chusiang/tuxENV.git
-    dest: "{{ home_path }}/vcs/tuxENV"
+    dest: "{{ ansible_user_dir }}/vcs/tuxENV"
     accept_hostkey: yes
     version: "master"
     
 - name: configure the tuxENV
   command: make install
   args:
-    chdir: "{{ home_path }}/vcs/tuxENV"
-    creates: "{{ home_path }}/.gitconfig"
+    chdir: "{{ ansible_user_dir }}/vcs/tuxENV"
+    creates: "{{ ansible_user_dir }}/.gitconfig"
   ignore_errors: true
 
 # vimrc
 - name: get my vimrc
   git:
     repo: git@github.com:chusiang/vimrc.git
-    dest: "{{ home_path }}/vcs/vimrc"
+    dest: "{{ ansible_user_dir }}/vcs/vimrc"
     accept_hostkey: yes
     version: "{{ vimrc_version }}"
     
 - name: configure the vim
   command: make install
   args:
-    chdir: "{{ home_path }}/vcs/vimrc"
-    creates: "{{ home_path }}/.vim/"
+    chdir: "{{ ansible_user_dir }}/vcs/vimrc"
+    creates: "{{ ansible_user_dir }}/.vim/"
 
 # vim: ft=ansible :
