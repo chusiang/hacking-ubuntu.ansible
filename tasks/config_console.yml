@@ -21,7 +21,7 @@
     repo: git@github.com:chusiang/vimrc.git
     dest: "{{ ansible_user_dir }}/vcs/vimrc"
     accept_hostkey: yes
-    version: "{{ vimrc_version }}"
+    version: "{{ vimrc_reversion }}"
     
 - name: configure the vim
   command: make install

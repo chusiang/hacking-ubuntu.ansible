@@ -63,6 +63,30 @@
     name: nixnote2
     state: present
 
+# WineHQ.
+- name: add apt key of winehq 
+  become: true
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: B59525092DF44DD0CE1D5D47E61A24DF77C899CB
+
+- name: add apt repository of winehq
+  become: true
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/wine/wine-builds/ubuntu {{ ansible_distribution_release }} main"
+    state: present
+
+- name: enable 32 bit architecture of dpkg
+  lineinfile:
+    path: /var/lib/dpkg/arch
+    line: 'i386'
+
+- name: install the winehq with ppa repo
+  become: true
+  apt:
+    name: winehq-staging
+    state: present
+
 
 
 # vim: ft=ansible :
