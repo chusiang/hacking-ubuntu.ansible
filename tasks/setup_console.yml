@@ -1,18 +1,34 @@
 ---
 
+# apt
 - name: install apt packages for console
   become: true
   apt: name={{ item }} state=present
   with_items:
-   - aptitude
-   - aptsh
-   - tmux
-   - irssi
-   - htop
-   - tree
-   - ack-grep
-   - make
-   - python-apt
+    - ack-grep
+    - apt-transport-https
+    - aptitude
+    - aptsh
+    - ca-certificates
+    - cmake
+    - curl
+    - htop
+    - irssi
+    - make
+    - mosh
+    - python-apt
+    - python-dev
+    - python-pip
+    - software-properties-common
+    - tmux
+    - tree
+
+# pip
+#- name: install pip packages for console
+#  become: true
+#  pip: name={{ item }} state=present
+#  with_items:
+#   - ansible-lint
 
 # Docker.
 - name: add apt key of docker engine
@@ -24,7 +40,7 @@
 - name: add apt repository of docker engine
   become: true
   apt_repository:
-    repo: deb https://apt.dockerproject.org/repo ubuntu-{{ ansible_distribution_release }} main
+    repo: "deb https://apt.dockerproject.org/repo ubuntu-{{ ansible_distribution_release }} main"
     state: present
 
 - name: install docker-engine with apt
@@ -33,4 +49,22 @@
     name: docker-engine
     state: present
 
-# 
+- name: setup user permission for docker
+  become: true
+  command: usermod -aG docker "{{ ansible_user_id }}"
+
+# Vagrant
+- name: get latest vagrant from official
+  get_url:
+    url: https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb
+    dest: /tmp/vagrant_1.9.1_x86_64.deb
+    checksum: sha256:d006d6227e049725b64d8ba3967f0c82460a403ff40230515c93134d58723150
+
+- name: install vagrant with deb file
+  become: true
+  apt:
+    deb: /tmp/vagrant_1.9.1_x86_64.deb
+
+
+
+# vim: ft=ansible :

@@ -12,7 +12,8 @@
   command: make install
   args:
     chdir: "{{ home_path }}/vcs/tuxENV"
-    creates: "{{ home_path }}/.bash_aliases"
+    creates: "{{ home_path }}/.gitconfig"
+  ignore_errors: true
 
 # vimrc
 - name: get my vimrc
@@ -27,4 +28,5 @@
   args:
     chdir: "{{ home_path }}/vcs/vimrc"
     creates: "{{ home_path }}/.vim/"
-  #ignore_errors: true
+
+# vim: ft=ansible :
