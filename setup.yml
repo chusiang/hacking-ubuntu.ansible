@@ -12,19 +12,33 @@
     - defaults/main.yml
 
   tasks:
+    # for thinkpad-t410
+    - name: include setup_thinkpad_t410.yml
+      include: tasks/setup_thinkpad_t410.yml
+      tags:
+        - t410
+
     # console
     - name: include setup_console.yml
       include: tasks/setup_console.yml
+      tags:
+        - console
 
     - name: include config_console.yml
       include: tasks/config_console.yml
+      tags:
+        - console
 
     # desktop
     - name: include setup_desktop.yml
       include: tasks/setup_desktop.yml
+      tags:
+        - desktop
 
     - name: include config_desktop.yml
       include: tasks/config_desktop.yml
+      tags:
+        - desktop
 
 
 # vim: ft=ansible :

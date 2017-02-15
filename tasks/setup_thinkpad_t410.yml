@@ -1,0 +1,46 @@
+---
+
+# Display
+- name: install the NVIDIA Display (NVS3100M) frimware
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - nvidia-340
+    - nvidia-opencl-icd-340
+    - nvidia-prime
+    - nvidia-settings
+
+# CPU
+- name: install the Intel Microcode frimware
+  become: true
+  apt: name=intel-microcode state=present
+
+# ThinkPad smapi
+- name: install the thinkpad smapi module with dkms
+  become: true
+  apt: name=tp-smapi-dkms state=present
+
+#- name: install the thinkpad smapi module with source
+#  become: true
+#  apt: name=tp-smapi-source state=present
+
+#- name: compile the tp-smapi module
+#  become: true
+#  command: m-a a-i tp-smapi
+
+# TLP
+- name: install some apt packages for tlp
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - tlp
+    - acpi-call-dkms 
+
+- name: configure the tlp
+  become: true
+  copy:
+    src: files/tlp.cfg
+    dest: "/etc/default/tlp"
+
+
+# vim: ft=ansible :
