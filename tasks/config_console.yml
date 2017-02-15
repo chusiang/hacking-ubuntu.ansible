@@ -1,0 +1,30 @@
+---
+
+# tuxENV
+- name: get my tuxENV
+  git:
+    repo: git@github.com:chusiang/tuxENV.git
+    dest: "{{ home_path }}/vcs/tuxENV"
+    accept_hostkey: yes
+    version: "master"
+    
+- name: configure the tuxENV
+  command: make install
+  args:
+    chdir: "{{ home_path }}/vcs/tuxENV"
+    creates: "{{ home_path }}/.bash_aliases"
+
+# vimrc
+- name: get my vimrc
+  git:
+    repo: git@github.com:chusiang/vimrc.git
+    dest: "{{ home_path }}/vcs/vimrc"
+    accept_hostkey: yes
+    version: "{{ vimrc_version }}"
+    
+- name: configure the vim
+  command: make install
+  args:
+    chdir: "{{ home_path }}/vcs/vimrc"
+    creates: "{{ home_path }}/.vim/"
+  #ignore_errors: true

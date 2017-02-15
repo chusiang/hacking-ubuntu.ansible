@@ -1,0 +1,23 @@
+#!/usr/bin/env ansible-playbook
+
+---
+- name: play 'ubuntu-desktop.ansible/setup.yml'
+  hosts: local
+
+  #roles:
+  #  - chusiang.switch-apt-mirror
+  #  - chusiang.vim-and-vi-mode
+
+  vars_files:
+    - defaults/main.yml
+
+  tasks:
+   - name: include setup_console.yml
+     include: tasks/setup_console.yml
+
+   - name: include config_console.yml
+     include: tasks/config_console.yml
+
+   - name: include setup_desktop.yml
+     include: tasks/setup_desktop.yml
+

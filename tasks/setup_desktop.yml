@@ -1,0 +1,13 @@
+---
+
+- name: install apt packages for desktop
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+   - vim-gnome
+   - terminator
+   - shutter
+   - workrave
+   - sm
+   - vlc
+

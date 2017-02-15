@@ -1,0 +1,36 @@
+---
+
+- name: install apt packages for console
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+   - aptitude
+   - aptsh
+   - tmux
+   - irssi
+   - htop
+   - tree
+   - ack-grep
+   - make
+   - python-apt
+
+# Docker.
+- name: add apt key of docker engine
+  become: true
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+
+- name: add apt repository of docker engine
+  become: true
+  apt_repository:
+    repo: deb https://apt.dockerproject.org/repo ubuntu-{{ ansible_distribution_release }} main
+    state: present
+
+- name: install docker-engine with apt
+  become: true
+  apt:
+    name: docker-engine
+    state: present
+
+# 
