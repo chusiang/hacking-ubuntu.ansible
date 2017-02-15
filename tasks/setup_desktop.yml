@@ -44,4 +44,25 @@
     name: zeal
     state: present
 
+# NixNote 2.
+- name: add apt key of nixnote
+  become: true
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: AF3D90CFFDB12616A844CD229A66B34BAF11ADDE
+
+- name: add apt repository of nixnote
+  become: true
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/nixnote/nixnote2-daily/ubuntu {{ ansible_distribution_release }} main"
+    state: present
+
+- name: install the nixnote with ppa repo
+  become: true
+  apt:
+    name: nixnote2
+    state: present
+
+
+
 # vim: ft=ansible :
