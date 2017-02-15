@@ -43,5 +43,64 @@
     dest: "/etc/default/tlp"
   notify: restart tlp
 
+# WWAN: Qualcomm Gobi 2000
+- name: get the zip file of gobi 2000 images
+  get_url:
+    url: https://github.com/chusiang/ubuntu-desktop.ansible/files/777446/gobi2000_images.zip
+    dest: "/tmp/gobi2000_images.zip"
+    checksum: sha256:c93b7bd84e61d5c567b0fb9a0244385f77bb6bbcb911cc8b3e9fe7c59e60c95b
+  tags: wwan
+
+- name: check gobo 2000 target path
+  stat: path=/lib/firmware/gobi/
+  register: gobi_target_path
+  tags: wwan
+
+- name: unzip the gobi 2000 images
+  become: true
+  unarchive:
+    src: "/tmp/gobi2000_images.zip"
+    dest: /lib/firmware/
+  when: gobi_target_path.stat.exists != true
+  tags: wwan
+
+- name: rename directory for gobi 2000 
+  become: true
+  command: mv /lib/firmware/gobi2000_images/ /lib/firmware/gobi/
+  args:
+    creates: "/lib/firmware/gobi/"
+  tags: wwan
+
+- name: install the gobi-loader with apt
+  become: true
+  apt: name=gobi-loader state=present update_cache=yes
+  tags: wwan
+
+# thinkpad-extras
+- name: add apt key of thinkpad-extras
+  become: true
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: 2042F03C5FABD0BA2CED40412B3F92F902D65EFF
+  tags:
+    - thinkpad-extras
+
+- name: add apt repository of thinkpad-extras
+  become: true
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/linrunner/thinkpad-extras/ubuntu {{ ansible_distribution_release }} main"
+    state: present
+  tags:
+    - thinkpad-extras
+
+- name: install the thinkpad-extras with ppa repo
+  become: true
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+    - configure-trackpoint
+    - hdaps-utils
+  tags:
+    - thinkpad-extras
+
 
 # vim: ft=ansible :
