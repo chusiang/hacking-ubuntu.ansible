@@ -49,12 +49,16 @@
     url: https://github.com/chusiang/ubuntu-desktop.ansible/files/777446/gobi2000_images.zip
     dest: "/tmp/gobi2000_images.zip"
     checksum: sha256:c93b7bd84e61d5c567b0fb9a0244385f77bb6bbcb911cc8b3e9fe7c59e60c95b
-  tags: wwan
+  tags:
+    - network
+    - wwan
 
 - name: check gobo 2000 target path
   stat: path=/lib/firmware/gobi/
   register: gobi_target_path
-  tags: wwan
+  tags:
+    - network
+    - wwan
 
 - name: unzip the gobi 2000 images
   become: true
@@ -62,19 +66,42 @@
     src: "/tmp/gobi2000_images.zip"
     dest: /lib/firmware/
   when: gobi_target_path.stat.exists != true
-  tags: wwan
+  tags:
+    - network
+    - wwan
 
 - name: rename directory for gobi 2000 
   become: true
   command: mv /lib/firmware/gobi2000_images/ /lib/firmware/gobi/
   args:
     creates: "/lib/firmware/gobi/"
-  tags: wwan
+  tags:
+    - network
+    - wwan
 
 - name: install the gobi-loader with apt
   become: true
   apt: name=gobi-loader state=present update_cache=yes
-  tags: wwan
+  tags:
+    - network
+    - wwan
+
+- name: install some packages for iDevice usb tethering
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - ipheth-utils
+    - libimobiledevice-dev
+    - libimobiledevice-utils
+  tags:
+    - network
+    - usb_modem
+
+# HDAPS
+- name: install the hdaps with apt
+  become: true
+  apt: name=hdapsd state=present
+
 
 # thinkpad-extras
 - name: add apt key of thinkpad-extras
@@ -95,7 +122,7 @@
 
 - name: install the thinkpad-extras with ppa repo
   become: true
-  apt: name={{ item }} state=present update_cache=yes
+  apt: name={{ item }} state=present
   with_items:
     - configure-trackpoint
     - hdaps-utils
