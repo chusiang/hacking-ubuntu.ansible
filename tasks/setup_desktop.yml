@@ -11,7 +11,8 @@
     - sm
     - vlc
     - hime
-    - zeal
+    - chromium-browser
+    - compizconfig-settings-manager
 
 - name: install language packages with apt
   become: true
@@ -19,5 +20,28 @@
   with_items:
     - language-pack-gnome-zh-hant
     - language-pack-zh-hant
+    - libreoffice-l10n-zh-tw
+    - libreoffice-help-zh-tw
+    - thunderbird-locale-zh-tw
+
+# Zeal.
+- name: add apt key of zeal
+  become: true
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: 786285426B130F8C8C67CEF87F73D5BEFC1B6133
+
+- name: add apt repository of zeal
+  become: true
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/zeal-developers/ppa/ubuntu {{ ansible_distribution_release }} main"
+
+    state: present
+
+- name: install the zeal with ppa repo
+  become: true
+  apt:
+    name: zeal
+    state: present
 
 # vim: ft=ansible :

@@ -9,9 +9,11 @@
     - apt-transport-https
     - aptitude
     - aptsh
+    - build-essential
     - ca-certificates
     - cmake
     - curl
+    - exuberant-ctags
     - htop
     - irssi
     - make

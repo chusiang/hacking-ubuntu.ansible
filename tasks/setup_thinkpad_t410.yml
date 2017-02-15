@@ -39,8 +39,9 @@
 - name: configure the tlp
   become: true
   copy:
-    src: files/tlp.cfg
+    src: files/tlp.conf
     dest: "/etc/default/tlp"
+  notify: restart tlp
 
 
 # vim: ft=ansible :

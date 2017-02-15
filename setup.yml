@@ -41,4 +41,8 @@
         - desktop
 
 
+  handlers:
+    - name: restart tlp
+      service: name=tlp state=restarted
+
 # vim: ft=ansible :
