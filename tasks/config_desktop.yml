@@ -1,7 +1,7 @@
 ---
 
-- name: switch the default Input Method to hime
-  command: im-config -n hime
+- name: switch the default Input Method
+  command: im-config -n gcin
 
 - name: configure the terminator
   copy:
