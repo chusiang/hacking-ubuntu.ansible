@@ -1,0 +1,7 @@
+---
+
+- name: switch the default Input Method to hime
+  command: im-config -n hime
+
+
+# vim: ft=ansible :

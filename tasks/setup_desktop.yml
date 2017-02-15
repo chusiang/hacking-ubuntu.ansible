@@ -4,10 +4,20 @@
   become: true
   apt: name={{ item }} state=present
   with_items:
-   - vim-gnome
-   - terminator
-   - shutter
-   - workrave
-   - sm
-   - vlc
+    - vim-gnome
+    - terminator
+    - shutter
+    - workrave
+    - sm
+    - vlc
+    - hime
+    - zeal
 
+- name: install language packages with apt
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - language-pack-gnome-zh-hant
+    - language-pack-zh-hant
+
+# vim: ft=ansible :

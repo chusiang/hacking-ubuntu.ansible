@@ -12,12 +12,19 @@
     - defaults/main.yml
 
   tasks:
-   - name: include setup_console.yml
-     include: tasks/setup_console.yml
+    # console
+    - name: include setup_console.yml
+      include: tasks/setup_console.yml
 
-   - name: include config_console.yml
-     include: tasks/config_console.yml
+    - name: include config_console.yml
+      include: tasks/config_console.yml
 
-   - name: include setup_desktop.yml
-     include: tasks/setup_desktop.yml
+    # desktop
+    - name: include setup_desktop.yml
+      include: tasks/setup_desktop.yml
 
+    - name: include config_desktop.yml
+      include: tasks/config_desktop.yml
+
+
+# vim: ft=ansible :
