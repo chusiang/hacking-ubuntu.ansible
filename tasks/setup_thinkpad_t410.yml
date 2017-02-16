@@ -10,6 +10,13 @@
     - nvidia-prime
     - nvidia-settings
 
+- name: configure the screen brightness
+  become: true
+  copy:
+    src: files/xorg.conf
+    dest: /etc/X11/xorg.conf
+  #notify: restart lightdm
+
 # CPU
 - name: install the Intel Microcode frimware
   become: true
