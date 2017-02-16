@@ -45,4 +45,7 @@
     - name: restart tlp
       service: name=tlp state=restarted
 
+    #- name: restart lightdm
+    #  service: name=lightdm state=restarted
+
 # vim: ft=ansible :

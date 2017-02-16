@@ -14,6 +14,19 @@ None.
 ## Variables
 
 ```
+apt_console_packages:
+  - ack-grep
+  - apt-transport-https
+  - aptitude
+  - aptsh
+  ...
+
+apt_desktop_packages:
+  - chromium-browser
+  - compizconfig-settings-manager
+  - gcin
+  ...
+
 vimrc_reversion: "feature/21_YCM_n_YltiSnips"
 ```
 

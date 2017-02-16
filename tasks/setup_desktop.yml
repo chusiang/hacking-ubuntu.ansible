@@ -1,18 +1,8 @@
 ---
 
-- name: install apt packages for desktop
+- name: install apt packages of desktop
   become: true
-  apt: name={{ item }} state=present
-  with_items:
-    - vim-gnome
-    - terminator
-    - shutter
-    - workrave
-    - sm
-    - vlc
-    - gcin
-    - chromium-browser
-    - compizconfig-settings-manager
+  apt: name={{ apt_desktop_packages }} state=present
 
 - name: install language packages with apt
   become: true
@@ -38,12 +28,6 @@
 
     state: present
 
-- name: install the zeal with ppa repo
-  become: true
-  apt:
-    name: zeal
-    state: present
-
 # NixNote 2.
 - name: add apt key of nixnote
   become: true
@@ -55,12 +39,6 @@
   become: true
   apt_repository:
     repo: "deb http://ppa.launchpad.net/nixnote/nixnote2-daily/ubuntu {{ ansible_distribution_release }} main"
-    state: present
-
-- name: install the nixnote with ppa repo
-  become: true
-  apt:
-    name: nixnote2
     state: present
 
 # WineHQ.
@@ -81,12 +59,13 @@
     path: /var/lib/dpkg/arch
     line: 'i386'
 
-- name: install the winehq with ppa repo
+- name: install apt packages of desktop with ppa
   become: true
-  apt:
-    name: winehq-staging
-    state: present
-
+  apt: name={{ item }} state=present
+  with_items:
+    - nixnote2
+    - winehq-staging
+    - zeal
 
 
 # vim: ft=ansible :

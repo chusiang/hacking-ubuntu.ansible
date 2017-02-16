@@ -1,3 +1,38 @@
 ---
 
+apt_console_packages:
+  - ack-grep
+  - apt-transport-https
+  - aptitude
+  - aptsh
+  - autojump
+  - build-essential
+  - ca-certificates
+  - cmake
+  - curl
+  - exuberant-ctags
+  - htop
+  - irssi
+  - make
+  - mosh
+  - python-apt
+  - python-dev
+  - python-pip
+  - signing-party
+  - software-properties-common
+  - tmux
+  - tree
+
+apt_desktop_packages:
+  - chromium-browser
+  - compizconfig-settings-manager
+  - gcin
+  - shutter
+  - sm
+  - terminator
+  - vim-gnome
+  - vlc
+  - workrave
+
 vimrc_reversion: "feature/21_YCM_n_UltiSnips"
+
