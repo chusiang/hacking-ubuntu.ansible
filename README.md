@@ -4,8 +4,12 @@ An Ansible playbook of setup Ubuntu Desktop GNU/Linux.
 
 Applications:
 
+1. [GVim](http://www.vim.org/)
 1. [NixNote 2](https://github.com/baumgarr/nixnote2)
+1. [VLC](http://www.videolan.org/)
 1. [WineHQ](https://wiki.winehq.org/Ubuntu)
+1. [Zeal](https://zealdocs.org/)
+1. [terminator](https://gnometerminator.blogspot.tw/)
 
 ## Requirements
 
