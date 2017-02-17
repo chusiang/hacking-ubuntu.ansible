@@ -105,7 +105,7 @@ s0_put_bottomleft_key = <Control><Alt>KP_End
 s0_put_bottomright_key = <Control><Alt>KP_Next
 s0_put_restore_key = Disabled
 s0_put_pointer_key = Disabled
-s0_put_next_output_key = <Shift><Alt>n
+s0_put_next_output_key = <Shift><Alt>m
 
 [freewins]
 s0_snap_threshold = 50

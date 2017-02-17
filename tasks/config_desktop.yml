@@ -24,10 +24,17 @@
   tags: gcin
 
 - name: import the liu table of gcin
-  shell: cp boshiamy-*.gtab boshiamy-*.png "{{ ansible_user_dir }}/.gcin"
-  args:
-    chdir: /tmp/boshiamy-gcin/
-    creates: "{{ ansible_user_dir }}/.gcin/boshiamy-t.gtab"
+  copy:
+    src: /tmp/boshiamy-gcin/boshiamy-t.gtab
+    dest: "{{ ansible_user_dir }}/.gcin/noseeing.gtab"
+  when: boshiamy_gcin_tmp_path.stat.exists == true
+  tags: gcin
+
+- name: import the liu png of gcin
+  copy:
+    src: /tmp/boshiamy-gcin/boshiamy-t.png
+    dest: "{{ ansible_user_dir }}/.gcin/noseeing.png"
+  when: boshiamy_gcin_tmp_path.stat.exists == true
   tags: gcin
 
 - name: configure the terminator
