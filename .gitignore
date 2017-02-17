@@ -1,3 +1,10 @@
+# ansible
 roles/
 *.retry
+
+# vim
 *.swp
+
+# tarball
+files/boshiamy-gcin.tar.gz
+

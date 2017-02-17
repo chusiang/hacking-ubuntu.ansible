@@ -4,16 +4,17 @@ An Ansible playbook of setup Ubuntu Desktop GNU/Linux.
 
 Applications:
 
+1. [Gcin](http://hyperrate.com/dir.php?eid=67)
 1. [GVim](http://www.vim.org/)
 1. [NixNote 2](https://github.com/baumgarr/nixnote2)
 1. [VLC](http://www.videolan.org/)
 1. [WineHQ](https://wiki.winehq.org/Ubuntu)
 1. [Zeal](https://zealdocs.org/)
-1. [terminator](https://gnometerminator.blogspot.tw/)
+1. [Terminator](https://gnometerminator.blogspot.tw/)
 
 ## Requirements
 
-None.
+1. Manual download the `boshiamy-gcin.tar.gz` to `files/` from [boshiamy.com](https://boshiamy.com).
 
 ## Variables
 
@@ -32,6 +33,8 @@ apt_desktop_packages:
   ...
 
 vimrc_reversion: "feature/21_YCM_n_YltiSnips"
+
+gcin_liu_table_path: "files/boshiamy-gcin.tar.gz"
 ```
 
 ## Dependencies

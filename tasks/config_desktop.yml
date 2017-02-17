@@ -1,7 +1,34 @@
 ---
 
+# Gcin
 - name: switch the default Input Method
   command: im-config -n gcin
+
+- name: check boshiamy-gcin tmp path
+  stat: path=/tmp/boshiamy-gcin
+  register: boshiamy_gcin_tmp_path
+  tags: gcin
+
+- name: check boshiamy-gcin zipfile path
+  stat: path={{ gcin_liu_table_path }}
+  register: boshiamy_gcin_zipfile_path
+  tags: gcin
+
+- name: unzip the boshiamy-gcin.tar.gz
+  unarchive:
+    src: "{{ gcin_liu_table_path }}"
+    dest: /tmp/
+  when:
+    - boshiamy_gcin_tmp_path.stat.exists != true
+    - boshiamy_gcin_zipfile_path.stat.exists == true
+  tags: gcin
+
+- name: import the liu table of gcin
+  shell: cp boshiamy-*.gtab boshiamy-*.png "{{ ansible_user_dir }}/.gcin"
+  args:
+    chdir: /tmp/boshiamy-gcin/
+    creates: "{{ ansible_user_dir }}/.gcin/boshiamy-t.gtab"
+  tags: gcin
 
 - name: configure the terminator
   copy:
