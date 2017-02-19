@@ -8,7 +8,7 @@
 
 [Desktop Entry]
 Type=Application
-Exec=/usr/local/bin/setting-trackpoint-speed.sh
+Exec=sudo /usr/local/bin/setting-trackpoint-speed.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

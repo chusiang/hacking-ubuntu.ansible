@@ -149,7 +149,7 @@
   become: true
   template:
     src: templates/sudoer-trackpoint-speed.conf
-    dest: /etc/sudoers.d/sudoer-trackpoint-speed.conf
+    dest: /etc/sudoers.d/10_trackpoint-speed
     mode: 0600
   tags:
     - trackpoint
