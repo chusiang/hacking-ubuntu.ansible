@@ -1,0 +1,35 @@
+#!/usr/bin/env ansible-playbook
+# ============================================================
+#  Author: Chu-Siang Lai / chusiang (at) drx.tw
+#  Blog: http://note.drx.tw
+#  Filename: setup_t410.yml
+#  Modified: 2017-02-20 02:52
+#  Description: Setup the ThinkPad T410 with Ansible.
+#  Reference:
+#
+#   - Setup the ThinkPad T410 · Issue #6 · chusiang/ubuntu-desktop.ansible
+#    - https://github.com/chusiang/ubuntu-desktop.ansible/issues/6
+#
+# ============================================================
+
+---
+- name: play 'ubuntu-desktop.ansible/setup_t410.yml'
+  hosts: local
+
+  vars_files:
+    - defaults/main.yml
+
+  tasks:
+    - name: include setup_thinkpad_t410.yml
+      include: tasks/setup_thinkpad_t410.yml
+      tags:
+        - t410
+
+  handlers:
+    - name: restart tlp
+      service: name=tlp state=restarted
+
+    #- name: restart lightdm
+    #  service: name=lightdm state=restarted
+
+# vim: ft=ansible :

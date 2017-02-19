@@ -1,22 +1,24 @@
 #!/usr/bin/env ansible-playbook
+# ============================================================
+#  Author: Chu-Siang Lai / chusiang (at) drx.tw
+#  Blog: http://note.drx.tw
+#  Filename: setup.yml
+#  Modified: 2017-02-20 02:54
+#  Description: Setup my Ubuntu Desktop with Ansible.
+# ============================================================
 
 ---
 - name: play 'ubuntu-desktop.ansible/setup.yml'
   hosts: local
 
-  #roles:
-  #  - chusiang.switch-apt-mirror
-  #  - chusiang.vim-and-vi-mode
+  roles:
+    - chusiang.switch-apt-mirror
+    - chusiang.vim-and-vi-mode
 
   vars_files:
     - defaults/main.yml
 
   tasks:
-    # for thinkpad-t410
-    - name: include setup_thinkpad_t410.yml
-      include: tasks/setup_thinkpad_t410.yml
-      tags:
-        - t410
 
     # console
     - name: include setup_console.yml
@@ -39,7 +41,6 @@
       include: tasks/config_desktop.yml
       tags:
         - desktop
-
 
   handlers:
     - name: restart tlp
