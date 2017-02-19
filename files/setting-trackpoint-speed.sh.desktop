@@ -1,0 +1,19 @@
+# ============================================================
+#  Author: Chu-Siang Lai / chusiang (at) drx.tw
+#  Blog: http://note.drx.tw
+#  Filename: setting-trackpoint-speed.sh.desktop
+#  Modified: 2017-02-19 14:04
+#  Description: Autorun the setting-trackpoint-speed.sh at login.
+# ============================================================
+
+[Desktop Entry]
+Type=Application
+Exec=/usr/local/bin/setting-trackpoint-speed.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Setting trackpoint speed
+Name=Setting trackpoint speed
+Comment[en_US]=
+Comment=Setting the trackpoint speed and sensitivity for ThinkPad.
+
