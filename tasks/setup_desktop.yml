@@ -1,5 +1,14 @@
 ---
 
+# Accept license of ttf-mscorefonts-installer.
+- name: 'accept ttf-mscorefonts-installer license'
+  become: true
+  debconf:
+    name: ttf-mscorefonts-installer
+    question: msttcorefonts/accepted-mscorefonts-eula
+    value: true
+    vtype: select
+
 - name: install apt packages of desktop
   become: true
   apt: name={{ apt_desktop_packages }} state=present
@@ -54,10 +63,12 @@
     repo: "deb http://ppa.launchpad.net/wine/wine-builds/ubuntu {{ ansible_distribution_release }} main"
     state: present
 
-- name: enable 32 bit architecture of dpkg
-  lineinfile:
-    path: /var/lib/dpkg/arch
-    line: 'i386'
+#- name: enable 32 bit architecture of dpkg
+#  become: true
+#  lineinfile:
+#    path: /var/lib/dpkg/arch
+#    line: "i386"
+#    state: present
 
 - name: install apt packages of desktop with ppa
   become: true
