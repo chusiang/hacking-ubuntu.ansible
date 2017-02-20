@@ -1,6 +1,6 @@
 ---
 
-# Gcin
+# Gcin.
 - name: switch the default Input Method
   command: im-config -n gcin
 
@@ -37,11 +37,36 @@
   when: boshiamy_gcin_tmp_path.stat.exists == true
   tags: gcin
 
+# Setting the Monospace font with LiHei Pro + Monaco.
+- name: create the fonts directory
+  file:
+    path: "{{ ansible_user_dir }}/.fonts"
+    state: directory
+    mode: 0755
+  tags: font
+
+- name: get the font files
+  get_url:
+    url: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/.fonts"
+  with_items:
+    - "http://site.drx.tw/software/fonts/LiHeiProPC.ttf"
+    - "http://site.drx.tw/software/fonts/monaco.ttf"
+  tags: font
+
+- name: copy the fonts.conf
+  copy:
+    src: files/fonts.conf
+    dest: "{{ ansible_user_dir }}/.fonts.conf"
+  tags: font
+
+# Terminator.
 - name: configure the terminator
   copy:
     src: files/terminator.conf
     dest: "{{ ansible_user_dir }}/.config/terminator/config"
 
+# Zeal.
 - name: configure the zeal
   copy:
     src: files/zeal.conf
