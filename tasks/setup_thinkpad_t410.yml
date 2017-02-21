@@ -165,7 +165,6 @@
 - name: copy the trackpoint speed autostart config
   copy:
     src: files/setting-trackpoint-speed.sh.desktop
-    dest: /usr/local/bin/setting-trackpoint-speed.sh
     dest: "{{ ansible_user_dir }}/.config/autostart/"
   tags:
     - trackpoint

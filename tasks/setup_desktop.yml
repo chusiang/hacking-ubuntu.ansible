@@ -71,17 +71,30 @@
 #    state: present
 
 # Telegram
-- name: add apt key of telegram
-  become: true
-  apt_key:
-    keyserver: "{{ apt_keyserver }}"
-    id: A3D8A366869FE2DC5FFD79C36A9653F936FD5529
+- name: get latest telegram desktop from official
+  get_url:
+    url: https://telegram.org/dl/desktop/linux
+    dest: /tmp/tsetup.tar.xz
+  tags: telegram
 
-- name: add apt repository of Telegram
+- name: check telegram target path
+  stat: path=/opt/Telegram
+  register: telegram_target_path
+  tags: telegram
+
+- name: unzip the telegram.tar.xz
   become: true
-  apt_repository:
-    repo: "deb http://ppa.launchpad.net/atareao/telegram/ubuntu {{ ansible_distribution_release }} main"
-    state: present
+  unarchive:
+    src: "/tmp/tsetup.tar.xz"
+    dest: /opt/
+  when: telegram_target_path.stat.exists != true
+  tags: telegram
+
+- name: copy the launcher config of telegram.desktop 
+  copy:
+    src: files/telegram-desktop.desktop
+    dest: "{{ ansible_user_dir }}/.local/share/applications/telegram-desktop.desktop"
+  tags: telegram
 
 # ScudCloud (Unofficial open-source Slack client)
 - name: add apt key of ScudCloud

@@ -37,6 +37,7 @@ apt_desktop_packages:
   - vlc
   - workrave
   - ttf-mscorefonts-installer
+  - gcin-qt5-immodule
 
 # revision of vimrc.
 vimrc_reversion: "feature/21_YCM_n_UltiSnips"
