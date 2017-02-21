@@ -1,6 +1,6 @@
 [core]
 s0_active_plugins = core;composite;opengl;place;wall;put;commands;imgpng;regex;mousepoll;snap;vpswitch;session;animation;resize;copytex;compiztoolbox;move;grid;fade;unitymtgrabhandles;workarounds;expo;scale;ezoom;unityshell;
-s0_outputs = 1440x900+258+1080;1920x1080+0+0;
+s0_outputs = 1440x900+271+1080;1920x1080+0+0;
 s0_autoraise = false
 s0_autoraise_delay = 500
 s0_close_window_key = <Alt>q
@@ -54,6 +54,10 @@ s0_put_left_key = <Shift><Alt>h
 s0_put_right_key = <Shift><Alt>l
 s0_put_top_key = <Shift><Alt>k
 s0_put_bottom_key = <Shift><Alt>j
+s0_cycle_sizes = true
+
+[scale]
+s0_initiate_edge = TopLeft
 
 [opengl]
 s0_texture_filter = 0
