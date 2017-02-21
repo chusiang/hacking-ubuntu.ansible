@@ -30,6 +30,7 @@ apt_desktop_packages:
   - compizconfig-settings-manager
   - compiz-plugins-extra
   - gcin
+  - gcin-qt5-immodule
   - shutter
   - sm
   - terminator
@@ -37,11 +38,12 @@ apt_desktop_packages:
   - vlc
   - workrave
   - ttf-mscorefonts-installer
-  - gcin-qt5-immodule
 
 # revision of vimrc.
 vimrc_reversion: "feature/21_YCM_n_UltiSnips"
 
 # path of liu gcin table.
 gcin_liu_table_path: "files/boshiamy-gcin.tar.gz"
+
+franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 

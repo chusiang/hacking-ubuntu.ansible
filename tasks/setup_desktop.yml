@@ -37,7 +37,7 @@
 
     state: present
 
-# NixNote 2.
+# NixNote2.
 - name: add apt key of nixnote
   become: true
   apt_key:
@@ -70,68 +70,52 @@
 #    line: "i386"
 #    state: present
 
-# Telegram
-- name: get latest telegram desktop from official
-  get_url:
-    url: https://telegram.org/dl/desktop/linux
-    dest: /tmp/tsetup.tar.xz
-  tags: telegram
-
-- name: check telegram target path
-  stat: path=/opt/Telegram
-  register: telegram_target_path
-  tags: telegram
-
-- name: unzip the telegram.tar.xz
-  become: true
-  unarchive:
-    src: "/tmp/tsetup.tar.xz"
-    dest: /opt/
-  when: telegram_target_path.stat.exists != true
-  tags: telegram
-
-- name: copy the launcher config of telegram.desktop 
-  copy:
-    src: files/telegram-desktop.desktop
-    dest: "{{ ansible_user_dir }}/.local/share/applications/telegram-desktop.desktop"
-  tags: telegram
-
-# ScudCloud (Unofficial open-source Slack client)
-- name: add apt key of ScudCloud
-  become: true
-  apt_key:
-    keyserver: "{{ apt_keyserver }}"
-    id: 7BE3E5681146FD4F1A40EDA28094BB14F4E3FBBE
-
-- name: add apt repository of ScudCloud
-  become: true
-  apt_repository:
-    repo: "deb http://ppa.launchpad.net/rael-gc/scudcloud/ubuntu {{ ansible_distribution_release }} main"
-    state: present
-
-# HipChat
-- name: add apt key of HipChat
-  become: true
-  apt_key:
-    url: "https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public"
-    state: present
-
-- name: add apt repository of HipChat
-  become: true
-  apt_repository:
-    repo: "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client {{ ansible_distribution_release }} main"
-    state: present
-
 - name: install apt packages of desktop with ppa
   become: true
   apt: name={{ item }} state=present
   with_items:
-    - hipchat4
     - nixnote2
-    - scudcloud
-    - telegram
     - winehq-staging
     - zeal
 
+# Franz
+- name: get the franz tarball file
+  get_url:
+    url: "{{ franz_tarball_url }}"
+    dest: "/tmp/franz-linux-x64.tgz"
+  tags: franz
+
+- name: create the franz directory
+  become: true
+  file:
+    path: "/opt/franz"
+    state: directory
+    mode: 0755
+  tags: franz
+
+- name: check the franz binary target
+  stat: path=/opt/franz/Franz
+  register: franz_target_path
+  tags: franz
+
+- name: unarchive the franz tarball
+  become: true
+  unarchive:
+    src: "/tmp/franz-linux-x64.tgz"
+    dest: "/opt/franz/"
+  when: franz_target_path.stat.exists != true
+  tags: franz
+
+- name: copy the franz icon
+  copy:
+    src: files/franz.png
+    dest: "{{ ansible_user_dir }}/.local/share/icons/"
+  tags: franz
+
+- name: copy the franz.desktop
+  copy:
+    src: files/franz.desktop
+    dest: "{{ ansible_user_dir }}/.local/share/applications/"
+  tags: franz
 
 # vim: ft=ansible :
