@@ -17,6 +17,7 @@
   hosts: local
 
   vars_files:
+    - vars/main.yml
     - defaults/main.yml
 
   tasks:

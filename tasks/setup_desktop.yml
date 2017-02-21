@@ -27,7 +27,7 @@
 - name: add apt key of zeal
   become: true
   apt_key:
-    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    keyserver: "{{ apt_keyserver }}"
     id: 786285426B130F8C8C67CEF87F73D5BEFC1B6133
 
 - name: add apt repository of zeal
@@ -41,7 +41,7 @@
 - name: add apt key of nixnote
   become: true
   apt_key:
-    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    keyserver: "{{ apt_keyserver }}"
     id: AF3D90CFFDB12616A844CD229A66B34BAF11ADDE
 
 - name: add apt repository of nixnote
@@ -54,7 +54,7 @@
 - name: add apt key of winehq 
   become: true
   apt_key:
-    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    keyserver: "{{ apt_keyserver }}"
     id: B59525092DF44DD0CE1D5D47E61A24DF77C899CB
 
 - name: add apt repository of winehq
@@ -70,11 +70,24 @@
 #    line: "i386"
 #    state: present
 
+# Telegram
+- name: add apt key of telegram
+  become: true
+  apt_key:
+    keyserver: "{{ apt_keyserver }}"
+    id: A3D8A366869FE2DC5FFD79C36A9653F936FD5529
+
+- name: add apt repository of Telegram
+  become: true
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/atareao/telegram/ubuntu {{ ansible_distribution_release }} main"
+    state: present
+
 # ScudCloud (Unofficial open-source Slack client)
 - name: add apt key of ScudCloud
   become: true
   apt_key:
-    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    keyserver: "{{ apt_keyserver }}"
     id: 7BE3E5681146FD4F1A40EDA28094BB14F4E3FBBE
 
 - name: add apt repository of ScudCloud
@@ -88,9 +101,10 @@
   apt: name={{ item }} state=present
   with_items:
     - nixnote2
+    - scudcloud
+    - telegram
     - winehq-staging
     - zeal
-    - scudcloud
 
 
 # vim: ft=ansible :

@@ -16,7 +16,7 @@
 - name: add apt key of docker engine
   become: true
   apt_key:
-    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    keyserver: "{{ apt_keyserver }}"
     id: 58118E89F3A912897C070ADBF76221572C52609D
 
 - name: add apt repository of docker engine

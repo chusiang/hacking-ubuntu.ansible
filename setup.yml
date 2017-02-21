@@ -16,6 +16,7 @@
     - chusiang.vim-and-vi-mode
 
   vars_files:
+    - vars/main.yml
     - defaults/main.yml
 
   tasks:

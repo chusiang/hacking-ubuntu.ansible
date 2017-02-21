@@ -113,7 +113,7 @@
 - name: add apt key of thinkpad-extras
   become: true
   apt_key:
-    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    keyserver: "{{ apt_keyserver }}"
     id: 2042F03C5FABD0BA2CED40412B3F92F902D65EFF
   tags:
     - thinkpad-extras
