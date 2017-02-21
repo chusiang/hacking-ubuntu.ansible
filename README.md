@@ -6,6 +6,7 @@ Applications:
 
 1. [GVim](http://www.vim.org/)
 1. [Gcin](http://hyperrate.com/dir.php?eid=67)
+1. [HipChat](https://www.hipchat.com/)
 1. [NixNote2](https://github.com/baumgarr/nixnote2) - An unofficial Evernote client for Linux.
 1. [ScudCloud](https://github.com/raelgc/scudcloud) - An unofficial Slack client for Linux.
 1. [Telegram](https://telegram.org/)
