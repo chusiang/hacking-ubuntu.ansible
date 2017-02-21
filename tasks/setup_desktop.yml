@@ -70,6 +70,19 @@
 #    line: "i386"
 #    state: present
 
+# ScudCloud (Unofficial open-source Slack client)
+- name: add apt key of ScudCloud
+  become: true
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: 7BE3E5681146FD4F1A40EDA28094BB14F4E3FBBE
+
+- name: add apt repository of ScudCloud
+  become: true
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/rael-gc/scudcloud/ubuntu {{ ansible_distribution_release }} main"
+    state: present
+
 - name: install apt packages of desktop with ppa
   become: true
   apt: name={{ item }} state=present
@@ -77,6 +90,7 @@
     - nixnote2
     - winehq-staging
     - zeal
+    - scudcloud
 
 
 # vim: ft=ansible :

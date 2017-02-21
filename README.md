@@ -4,13 +4,14 @@ An Ansible playbook of setup Ubuntu Desktop GNU/Linux.
 
 Applications:
 
-1. [Gcin](http://hyperrate.com/dir.php?eid=67)
 1. [GVim](http://www.vim.org/)
-1. [NixNote 2](https://github.com/baumgarr/nixnote2)
+1. [Gcin](http://hyperrate.com/dir.php?eid=67)
+1. [NixNote2](https://github.com/baumgarr/nixnote2) - An unofficial Evernote client for Linux.
+1. [ScudCloud](https://github.com/raelgc/scudcloud) - An unofficial Slack client for Linux.
+1. [Terminator](https://gnometerminator.blogspot.tw/)
 1. [VLC](http://www.videolan.org/)
 1. [WineHQ](https://wiki.winehq.org/Ubuntu)
 1. [Zeal](https://zealdocs.org/)
-1. [Terminator](https://gnometerminator.blogspot.tw/)
 
 ## Requirements
 
