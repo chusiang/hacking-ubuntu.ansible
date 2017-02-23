@@ -1,0 +1,19 @@
+# ============================================================
+#  Author: Chu-Siang Lai / chusiang (at) drx.tw
+#  Blog: http://note.drx.tw
+#  Filename: switch-capslock-and-ctrl.sh.desktop
+#  Modified: 2017-02-23 22:00
+#  Description: Autorun the switch-capslock-and-ctrl.sh at login.
+# ============================================================
+
+[Desktop Entry]
+Type=Application
+Exec=/usr/local/bin/switch-capslock-and-ctrl.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Switch CapsLock and Ctrl key
+Name=Switch CapsLock and Ctrl key
+Comment[en_US]=
+Comment=Switch CapsLock and Left Ctrl key layout.
+

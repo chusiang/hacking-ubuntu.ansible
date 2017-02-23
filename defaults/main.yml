@@ -27,8 +27,8 @@ apt_console_packages:
 
 apt_desktop_packages:
   - chromium-browser
-  - compizconfig-settings-manager
   - compiz-plugins-extra
+  - compizconfig-settings-manager
   - gcin
   - gcin-qt5-immodule
   - shutter
