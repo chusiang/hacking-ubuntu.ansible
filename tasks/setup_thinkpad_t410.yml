@@ -109,6 +109,29 @@
   become: true
   apt: name=hdapsd state=present
 
+# Fingerprint
+- name: add apt key of fingerprint
+  become: true
+  apt_key:
+    keyserver: "{{ apt_keyserver }}"
+    id: 8141A328E64AC6C85D337D03EFD5FA852F20733F
+  tags: fingerprint
+
+- name: add apt repository of fingerprint
+  become: true
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/fingerprint/fingerprint-gui/ubuntu {{ ansible_distribution_release }} main"
+    state: present
+  tags: fingerprint
+
+- name: install the fingerprint with ppa repo
+  become: true
+  apt: name={{ item }} state=present
+  with_items:
+    - fingerprint-gui
+    - libbsapi
+  tags: fingerprint
+
 # thinkpad-extras
 - name: add apt key of thinkpad-extras
   become: true
@@ -132,8 +155,7 @@
   with_items:
     - configure-trackpoint
     - hdaps-utils
-  tags:
-    - thinkpad-extras
+  tags: thinkpad-extras
 
 # TrackPoint
 - name: copy the setting trackpoint script
