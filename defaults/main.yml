@@ -41,10 +41,16 @@ apt_desktop_packages:
   - workrave
   - ttf-mscorefonts-installer
 
+pip_packages:
+  - ansible-lint
+  - speedtest-cli
+  - virtualenv
+
 # revision of vimrc.
 vimrc_reversion: "feature/21_YCM_n_UltiSnips"
 
-dropbox_deb_url: "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb"
+vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb"
+vagrant_deb_sha256: "d006d6227e049725b64d8ba3967f0c82460a403ff40230515c93134d58723150"
 
 franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 
