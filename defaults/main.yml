@@ -43,10 +43,12 @@ apt_desktop_packages:
 # revision of vimrc.
 vimrc_reversion: "feature/21_YCM_n_UltiSnips"
 
-# path of liu gcin table.
-gcin_liu_table_path: "files/boshiamy-gcin.tar.gz"
+dropbox_deb_url: "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb"
 
 franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 
 freemind_tarball_url: "https://downloads.sourceforge.net/project/freemind/freemind/1.0.1/freemind-bin-max-1.0.1.zip"
+
+# path of liu gcin table.
+gcin_liu_table_path: "files/boshiamy-gcin.tar.gz"
 

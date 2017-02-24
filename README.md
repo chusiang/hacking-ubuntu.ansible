@@ -4,15 +4,18 @@ An Ansible playbook of setup Ubuntu Desktop GNU/Linux.
 
 Applications:
 
+1. [Dropbox](https://www.dropbox.com/)
 1. [Franz](http://meetfranz.com/) (tarball) - A free messaging application for [HipChat](https://www.hipchat.com/), Messenger, Slack, [Telegram](https://telegram.org/).
 1. [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) (tarball) - A free mind mapping tool.
-1. [GVim](http://www.vim.org/)
-1. [Gcin](http://hyperrate.com/dir.php?eid=67)
+1. [GVim](http://www.vim.org/) - Vi IMproved - enhanced vi editor - with GNOME2 GUI.
+1. [Gcin](http://hyperrate.com/dir.php?eid=67) - GTK+ based input method for Chinese users.
 1. [NixNote2](https://github.com/baumgarr/nixnote2) - An unofficial Evernote client for Linux.
+1. [Shutter](http://shutter-project.org/) - A feature-rich screenshot program.
 1. [Terminator](https://gnometerminator.blogspot.tw/)
-1. [VLC](http://www.videolan.org/)
-1. [WineHQ](https://wiki.winehq.org/Ubuntu)
-1. [Zeal](https://zealdocs.org/)
+1. [VLC](http://www.videolan.org/) - Multimedia player and streamer.
+1. [WineHQ](https://wiki.winehq.org/Ubuntu) - official WineHQ build of the popular Wine software.
+1. [Zeal](https://zealdocs.org/) - Simple offline API documentation browser.
+1. [Workrave](http://www.workrave.org/) - Repetitive Strain Injury prevention tool.
 
 ## Requirements
 

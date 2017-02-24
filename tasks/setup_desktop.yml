@@ -23,6 +23,18 @@
     - libreoffice-help-zh-tw
     - thunderbird-locale-zh-tw
 
+# Dropbox
+- name: get the dropbox_amd64.deb
+  get_url:
+    url: "{{ dropbox_deb_url }}"
+    dest: "/tmp/dropbox_amd64.deb"
+  tags: dropbox
+
+- name: install the dropbox packages with deb
+  become: true
+  apt: deb=/tmp/dropbox_amd64.deb
+  tags: dropbox
+
 # Zeal.
 - name: add apt key of zeal
   become: true
