@@ -8,6 +8,7 @@
     question: msttcorefonts/accepted-mscorefonts-eula
     value: true
     vtype: select
+  tags: wine
 
 - name: install apt packages of desktop
   become: true
@@ -24,15 +25,18 @@
     - thunderbird-locale-zh-tw
 
 # Dropbox
-- name: get the dropbox_amd64.deb
-  get_url:
-    url: "{{ dropbox_deb_url }}"
-    dest: "/tmp/dropbox_amd64.deb"
+- name: add apt key of dropbox
+  become: true
+  apt_key:
+    keyserver: "{{ apt_keyserver }}"
+    id: 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
   tags: dropbox
 
-- name: install the dropbox packages with deb
+- name: add apt repository of dropbox
   become: true
-  apt: deb=/tmp/dropbox_amd64.deb
+  apt_repository:
+    repo: "deb [arch=i386,amd64] http://linux.dropbox.com/ubuntu {{ ansible_distribution_release }} main"
+    state: present
   tags: dropbox
 
 # Zeal.
@@ -41,26 +45,29 @@
   apt_key:
     keyserver: "{{ apt_keyserver }}"
     id: 786285426B130F8C8C67CEF87F73D5BEFC1B6133
+  tags: zeal
 
 - name: add apt repository of zeal
   become: true
   apt_repository:
     repo: "deb http://ppa.launchpad.net/zeal-developers/ppa/ubuntu {{ ansible_distribution_release }} main"
-
     state: present
+  tags: zeal
 
 # NixNote2.
-- name: add apt key of nixnote
+- name: add apt key of nixnote2
   become: true
   apt_key:
     keyserver: "{{ apt_keyserver }}"
     id: AF3D90CFFDB12616A844CD229A66B34BAF11ADDE
+  tags: nixnote2
 
-- name: add apt repository of nixnote
+- name: add apt repository of nixnote2
   become: true
   apt_repository:
     repo: "deb http://ppa.launchpad.net/nixnote/nixnote2-daily/ubuntu {{ ansible_distribution_release }} main"
     state: present
+  tags: nixnote2
 
 # WineHQ.
 - name: add apt key of winehq 
@@ -68,12 +75,14 @@
   apt_key:
     keyserver: "{{ apt_keyserver }}"
     id: B59525092DF44DD0CE1D5D47E61A24DF77C899CB
+  tags: wine
 
 - name: add apt repository of winehq
   become: true
   apt_repository:
     repo: "deb http://ppa.launchpad.net/wine/wine-builds/ubuntu {{ ansible_distribution_release }} main"
     state: present
+  tags: wine
 
 - name: enable 32 bit architecture of dpkg
   become: true
@@ -81,11 +90,13 @@
     dest: /var/lib/dpkg/arch
     line: "i386"
     state: present
+  tags: wine
 
-- name: install apt packages of desktop with ppa
+- name: install third-party apt packages of desktop
   become: true
   apt: name={{ item }} state=present
   with_items:
+    - dropbox
     - nixnote2
     - winehq-staging
     - zeal

@@ -18,6 +18,7 @@ apt_console_packages:
   - mosh
   - python-apt
   - python-dev
+  - python-gpgme
   - python-pip
   - sdcv
   - signing-party
