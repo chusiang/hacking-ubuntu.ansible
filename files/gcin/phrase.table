@@ -1,14 +1,5 @@
-# ============================================================
-#  Author: Chu-Siang Lai / chusiang (at) drx.tw
-#  Blog: http://note.drx.tw
-#  Filename: phrase.table
-#  Modified: 2017-02-18 01:30
-#  Description: 
-#
-#   這個檔案是按 alt-shift-??? 時會送出的字串。
-#   第一個字母如果是大寫，代表如果 CapsLock 打開時會用的片語。
-#
-# ============================================================
+# 這個檔案是按 alt-shift-??? 時會送出的字串。
+# 第一個字母如果是大寫，代表如果 CapsLock 打開時會用的片語。
 
 a http://note.drx.tw
 A <a href="" target="_blank">  </a>
@@ -18,10 +9,10 @@ c <blockquote>  </blockquote>
 C <span class="Ctrl">[Enter]</span>
 #C <span style="background-color: white; border-radius: 5pt 5pt 5pt 5pt; border: 3pt outset rgb(136, 136, 136); color: #444444; font-family: sans-serif; font-size: smaller; font-weight: bold; padding: 0px 2px 1px; text-align: center; vertical-align: middle;">Enter</span>
 d <strike>  </strike>
-D 
+D (droid_dance)
 e  target="_blank"
-f 
-F 
+f Firefox
+F Facebook
 g <span class="Comment"># </span>
 #g <font color="#2668FF"># </font>
 G <font color="#238C00">/*  */</font>
@@ -32,7 +23,7 @@ j ↓
 k ↑
 K ⌨
 l →
-L 
+L linux
 m <span class="lipsum"></span>
 n <span class="Ctrl">[Enter]</span>
 N <span class="lnr">&nbsp;1&nbsp;</span>
@@ -40,18 +31,18 @@ o &nbsp;
 p &copy;
 q 
 r <center> </center>
-R 
+R Cartoon
 s <font color="#ffdb00">★</font>
-S 
+S Server
 t title=""
-T <h2 class="date-header"><span>2017-0-0</span></h2>
-u 
+T <h2 class="date-header"><span>2012-0-0</span></h2>
+u Ubuntu
 v 
 w ▲ 
 W <span style="color: #91B9E0;">C:\Users\Administrator&gt;</span>
 x <code class="ref"> </code>
-y 
-Y 
+y jonny@kimo.com
+Y jonny70686@yahoo.com.tw
 z <!--more-->
 Z <span class="fullpost"> </span>
 , &lt;
@@ -61,7 +52,8 @@ Z <span class="fullpost"> </span>
 ] 】
 / &#47;
 ` jonny@linux:~$ 
-1 [ <span style="color: #ffdb00;">jonny</span><span style="color: red;">@xenial</span> <span style="color: #ad7fa8;">~</span> ]
+#1 <font color="#FFDB00">jonny</font><font color="#FF0000">@linux:</font><font color="#AD7FA8">~$</font> 
+1 [ <span style="color: #ffdb00;">jonny</span><span style="color: red;">@precise</span> <span style="color: #ad7fa8;">~</span> ]
 2 chusiang.lai@gmail.com
 3 
 4 資料來源：
@@ -69,10 +61,10 @@ Z <span class="fullpost"> </span>
 6 延伸閱讀：
 7 &amp;
 8 站內連結：
-9 
-0 
-- <[_ _]>
-=
+9 k49311126@gcloud.csu.edu.tw
+0 高雄市苓雅區福德二路 26 號 5 樓之一
+- <(_ _)>
+= (worship)
 #= ≠
 \ 反斜
 ' &quot;
@@ -120,3 +112,8 @@ f3 --------
 f4 ~~~~~~~~
 f5 `TEXT <LINK>`_
 
+# ------------------------------------
+# Author : Chu-siang Lai
+# E-mail : jonny (at) ubuntu-tw.org
+# Blog: http://jonny.ubuntu-tw.net
+# ------------------------------------

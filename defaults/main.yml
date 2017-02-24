@@ -24,6 +24,7 @@ apt_console_packages:
   - software-properties-common
   - tmux
   - tree
+  - urlview
 
 apt_desktop_packages:
   - chromium-browser

@@ -30,11 +30,18 @@
   when: boshiamy_gcin_tmp_path.stat.exists == true
   tags: gcin
 
-- name: import the liu png of gcin
+#- name: import the liu png of gcin
+#  copy:
+#    src: /tmp/boshiamy-gcin/boshiamy-t.png
+#    dest: "{{ ansible_user_dir }}/.gcin/noseeing.png"
+#  when: boshiamy_gcin_tmp_path.stat.exists == true
+#  tags: gcin
+
+- name: import the configs of gcin
   copy:
-    src: /tmp/boshiamy-gcin/boshiamy-t.png
-    dest: "{{ ansible_user_dir }}/.gcin/noseeing.png"
-  when: boshiamy_gcin_tmp_path.stat.exists == true
+    src: "files/gcin/{{ item }}"
+    dest: "{{ ansible_user_dir }}/.gcin/{{ item }}"
+  with_items: "{{ gcin_config_files }}"
   tags: gcin
 
 # Setting the Monospace font with LiHei Pro + Monaco.
