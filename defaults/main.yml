@@ -48,3 +48,5 @@ gcin_liu_table_path: "files/boshiamy-gcin.tar.gz"
 
 franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 
+freemind_tarball_url: "https://downloads.sourceforge.net/project/freemind/freemind/1.0.1/freemind-bin-max-1.0.1.zip"
+

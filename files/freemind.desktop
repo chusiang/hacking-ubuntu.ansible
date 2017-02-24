@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=FreeMind
+Comment=A free mind mapping tool.
+Exec=/opt/freemind/freemind.sh
+Icon=freemind
+Terminal=false
+StartupWMClass=FreeMind
+Type=Application
+Categories=Office;

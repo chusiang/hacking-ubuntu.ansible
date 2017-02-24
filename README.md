@@ -4,7 +4,8 @@ An Ansible playbook of setup Ubuntu Desktop GNU/Linux.
 
 Applications:
 
-1. [Franz](http://meetfranz.com/) - a free messaging application for [HipChat](https://www.hipchat.com/), Messenger, Slack, [Telegram](https://telegram.org/).
+1. [Franz](http://meetfranz.com/) (tarball) - A free messaging application for [HipChat](https://www.hipchat.com/), Messenger, Slack, [Telegram](https://telegram.org/).
+1. [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) (tarball) - A free mind mapping tool.
 1. [GVim](http://www.vim.org/)
 1. [Gcin](http://hyperrate.com/dir.php?eid=67)
 1. [NixNote2](https://github.com/baumgarr/nixnote2) - An unofficial Evernote client for Linux.

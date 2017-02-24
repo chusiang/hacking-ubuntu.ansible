@@ -63,12 +63,12 @@
     repo: "deb http://ppa.launchpad.net/wine/wine-builds/ubuntu {{ ansible_distribution_release }} main"
     state: present
 
-#- name: enable 32 bit architecture of dpkg
-#  become: true
-#  lineinfile:
-#    path: /var/lib/dpkg/arch
-#    line: "i386"
-#    state: present
+- name: enable 32 bit architecture of dpkg
+  become: true
+  lineinfile:
+    dest: /var/lib/dpkg/arch
+    line: "i386"
+    state: present
 
 - name: install apt packages of desktop with ppa
   become: true
@@ -93,7 +93,7 @@
     mode: 0755
   tags: franz
 
-- name: check the franz binary target
+- name: check the franz binary file state
   stat: path=/opt/franz/Franz
   register: franz_target_path
   tags: franz
@@ -107,15 +107,66 @@
   tags: franz
 
 - name: copy the franz icon
+  become: true
   copy:
     src: files/franz.png
-    dest: "{{ ansible_user_dir }}/.local/share/icons/"
+    dest: "/usr/share/icons/"
   tags: franz
 
 - name: copy the franz.desktop
+  become: true
   copy:
     src: files/franz.desktop
-    dest: "{{ ansible_user_dir }}/.local/share/applications/"
+    dest: "/usr/share/applications/"
   tags: franz
+
+# FreeMind
+- name: get the freemind tarball file
+  get_url:
+    url: "{{ freemind_tarball_url }}"
+    dest: "/tmp/freemind.zip"
+  tags: freemind
+
+- name: create the freemind directory
+  become: true
+  file:
+    path: "/opt/freemind"
+    state: directory
+    mode: 0755
+  tags: freemind
+
+- name: check the freemind execute file state
+  stat: path=/opt/freemind/freemind.sh
+  register: freemind_target_path
+  tags: freemind
+
+- name: unarchive the freemind tarball
+  become: true
+  unarchive:
+    src: "/tmp/freemind.zip"
+    dest: "/opt/freemind/"
+  when: freemind_target_path.stat.exists != true
+  tags: freemind
+
+- name: add execute permission of freemind.sh
+  become: true
+  file:
+    path: /opt/freemind/freemind.sh
+    mode: 0755
+  tags: freemind
+
+- name: copy the freemind icon
+  become: true
+  copy:
+    src: files/freemind.png
+    dest: "/usr/share/icons/"
+  tags: freemind
+
+- name: copy the freemind.desktop
+  become: true
+  copy:
+    src: files/freemind.desktop
+    dest: "/usr/share/applications/"
+  tags: freemind
 
 # vim: ft=ansible :
