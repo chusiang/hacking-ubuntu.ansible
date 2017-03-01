@@ -33,13 +33,14 @@ apt_desktop_packages:
   - compizconfig-settings-manager
   - gcin
   - gcin-qt5-immodule
+  - seahorse-nautilus
   - shutter
   - sm
   - terminator
+  - ttf-mscorefonts-installer
   - vim-gnome
   - vlc
   - workrave
-  - ttf-mscorefonts-installer
 
 pip_packages:
   - ansible-lint
@@ -49,8 +50,8 @@ pip_packages:
 # revision of vimrc.
 vimrc_reversion: "feature/21_YCM_n_UltiSnips"
 
-vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb"
-vagrant_deb_sha256: "d006d6227e049725b64d8ba3967f0c82460a403ff40230515c93134d58723150"
+vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.2/vagrant_1.9.2_x86_64.deb"
+vagrant_deb_sha256: "52ebd6aa798582681d0f1e008982c709136eeccd668a8e8be4d48a1f632de7b8"
 
 franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 
