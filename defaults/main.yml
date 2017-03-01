@@ -12,6 +12,7 @@ apt_console_packages:
   - cmake
   - curl
   - exuberant-ctags
+  - git-flow
   - htop
   - irssi
   - make
