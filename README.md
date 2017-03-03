@@ -2,8 +2,13 @@
 
 An Ansible playbook of setup Ubuntu Desktop GNU/Linux.
 
+- Ubuntu 16.04
+- Lightdm
+- Unity
+
 Applications:
 
+1. [calibre](https://calibre-ebook.com/) - e-book converter and library management.
 1. [Dropbox](https://www.dropbox.com/)
 1. [Franz](http://meetfranz.com/) (tarball) - A free messaging application for [HipChat](https://www.hipchat.com/), Messenger, Slack, [Telegram](https://telegram.org/).
 1. [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) (tarball) - A free mind mapping tool.

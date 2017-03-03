@@ -30,6 +30,7 @@ apt_console_packages:
 
 apt_desktop_packages:
   - chromium-browser
+  - calibre
   - compiz-plugins-extra
   - compizconfig-settings-manager
   - gcin
@@ -48,16 +49,20 @@ pip_packages:
   - speedtest-cli
   - virtualenv
 
-# revision of vimrc.
-vimrc_reversion: "feature/21_YCM_n_UltiSnips"
-
-vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.2/vagrant_1.9.2_x86_64.deb"
-vagrant_deb_sha256: "52ebd6aa798582681d0f1e008982c709136eeccd668a8e8be4d48a1f632de7b8"
-
 franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 
 freemind_tarball_url: "https://downloads.sourceforge.net/project/freemind/freemind/1.0.1/freemind-bin-max-1.0.1.zip"
 
 # path of liu gcin table.
 gcin_liu_table_path: "files/boshiamy-gcin.tar.gz"
+
+moedict_tarball_url: "https://github.com/racklin/moedict-desktop/releases/download/1.1.1/moedict-desktop.app-1.1.1-linux-x86_64.tar.bz2"
+moedict_tarball_sha256: "97a9e778656e9b124d8acb3b2eaea22d"
+
+# vagrant
+vagrant_deb_sha256: "52ebd6aa798582681d0f1e008982c709136eeccd668a8e8be4d48a1f632de7b8"
+vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.2/vagrant_1.9.2_x86_64.deb"
+
+# revision of vimrc.
+vimrc_reversion: "feature/21_YCM_n_UltiSnips"
 
