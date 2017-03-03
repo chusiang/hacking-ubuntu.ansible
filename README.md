@@ -8,8 +8,9 @@ An Ansible playbook of setup Ubuntu Desktop GNU/Linux.
 
 Applications:
 
-1. [calibre](https://calibre-ebook.com/) - e-book converter and library management.
+1. [Calibre](https://calibre-ebook.com/) - A e-book converter and library management.
 1. [Dropbox](https://www.dropbox.com/)
+1. [FBReader](https://fbreader.org/) - A e-book reader.
 1. [Franz](http://meetfranz.com/) (tarball) - A free messaging application for [HipChat](https://www.hipchat.com/), Messenger, Slack, [Telegram](https://telegram.org/).
 1. [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) (tarball) - A free mind mapping tool.
 1. [GVim](http://www.vim.org/) - Vi IMproved - enhanced vi editor - with GNOME2 GUI.

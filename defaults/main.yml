@@ -29,10 +29,11 @@ apt_console_packages:
   - urlview
 
 apt_desktop_packages:
-  - chromium-browser
   - calibre
+  - chromium-browser
   - compiz-plugins-extra
   - compizconfig-settings-manager
+  - fbreader
   - gcin
   - gcin-qt5-immodule
   - seahorse-nautilus
