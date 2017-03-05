@@ -17,6 +17,7 @@ apt_console_packages:
   - irssi
   - make
   - mosh
+  - opencc
   - python-apt
   - python-dev
   - python-gpgme
@@ -27,6 +28,7 @@ apt_console_packages:
   - tmux
   - tree
   - urlview
+  - w3m
 
 apt_desktop_packages:
   - calibre
