@@ -13,7 +13,7 @@
 
   roles:
     - chusiang.switch-apt-mirror
-    - chusiang.vim-and-vi-mode
+    - { role: chusiang.vim-and-vi-mode, tags: vim }
 
   vars_files:
     - vars/main.yml

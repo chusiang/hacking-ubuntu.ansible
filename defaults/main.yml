@@ -69,3 +69,10 @@ vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.2/vagrant_1.9.2_x86
 # revision of vimrc.
 vimrc_reversion: "feature/21_YCM_n_UltiSnips"
 
+# tuxENV
+#tuxenv_git_url: "git@github.com:chusiang/tuxENV.git"
+tuxenv_git_url: "https://github.com/chusiang/tuxENV.git"
+
+# vimrc
+#vimrc_git_url: "git@github.com:chusiang/vimrc.git"
+vimrc_git_url: "https://github.com/chusiang/vimrc.git"

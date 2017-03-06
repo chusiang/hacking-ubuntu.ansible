@@ -3,11 +3,11 @@
 # tuxENV
 - name: get my tuxENV
   git:
-    repo: git@github.com:chusiang/tuxENV.git
+    repo: "{{ tuxenv_git_url }}"
     dest: "{{ ansible_user_dir }}/vcs/tuxENV"
     accept_hostkey: yes
     version: "master"
-    
+
 - name: configure the tuxENV
   command: make install
   args:
@@ -18,15 +18,19 @@
 # vimrc
 - name: get my vimrc
   git:
-    repo: git@github.com:chusiang/vimrc.git
+    repo: "{{ vimrc_git_url }}"
     dest: "{{ ansible_user_dir }}/vcs/vimrc"
     accept_hostkey: yes
     version: "{{ vimrc_reversion }}"
-    
+  tags: vim
+
 - name: configure the vim
-  command: make install
+  shell: "(make install > /dev/null 2>&1 &)"
   args:
     chdir: "{{ ansible_user_dir }}/vcs/vimrc"
     creates: "{{ ansible_user_dir }}/.vim/"
+  async: 90
+  poll: 30
+  tags: vim
 
 # vim: ft=ansible :
