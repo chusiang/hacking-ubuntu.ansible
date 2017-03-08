@@ -1,0 +1,34 @@
+#!/usr/bin/env ansible-playbook
+# ============================================================
+#  Author: Chu-Siang Lai / chusiang (at) drx.tw
+#  Blog: http://note.drx.tw
+#  Filename: setup_console.yml
+#  Modified: 2017-03-08 16:35
+#  Description: Setup my Ubuntu Server with Ansible.
+# ============================================================
+
+---
+- name: play 'ubuntu-desktop.ansible/setup.yml'
+  hosts: local
+
+  roles:
+    - chusiang.switch-apt-mirror
+    - chusiang.vim-and-vi-mode
+
+  vars_files:
+    - vars/main.yml
+    - defaults/main.yml
+
+  tasks:
+    # console
+    - name: include setup_console.yml
+      include: tasks/setup_console.yml
+      tags:
+        - console
+
+    - name: include config_console.yml
+      include: tasks/config_console.yml
+      tags:
+        - console
+
+# vim: ft=ansible :
