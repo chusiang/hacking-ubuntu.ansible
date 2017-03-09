@@ -12,10 +12,11 @@ brew_packages:
   - mosh
   - postgresql
   - redis
+  - ssh-copy-id
+  - tmate
   - tmux
   - vagrant-completion
   - vim
-  - ssh-copy-id
 
 brew_cask_packages:
   - appcleaner
@@ -28,6 +29,8 @@ brew_cask_packages:
   - google-chrome
   - gpgtools
   - keka
+  - libreoffice
+  - libreoffice-language-pack
   - macdown
   - macvim
   - obs
