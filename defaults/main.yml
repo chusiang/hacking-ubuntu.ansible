@@ -41,6 +41,7 @@ apt_desktop_packages:
   - seahorse-nautilus
   - shutter
   - sm
+  - sound-juicer
   - terminator
   - ttf-mscorefonts-installer
   - vim-gnome

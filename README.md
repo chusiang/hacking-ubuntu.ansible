@@ -17,11 +17,12 @@ Applications:
 1. [Gcin](http://hyperrate.com/dir.php?eid=67) - GTK+ based input method for Chinese users.
 1. ~~[NixNote2](https://github.com/baumgarr/nixnote2)~~ - An unofficial Evernote client for Linux.
 1. [Shutter](http://shutter-project.org/) - A feature-rich screenshot program.
+1. [Sound Juicer](https://github.com/GNOME/sound-juicer) - GNOME CD Ripper.
 1. [Terminator](https://gnometerminator.blogspot.tw/)
 1. [VLC](http://www.videolan.org/) - Multimedia player and streamer.
 1. [WineHQ](https://wiki.winehq.org/Ubuntu) - official WineHQ build of the popular Wine software.
-1. [Zeal](https://zealdocs.org/) - Simple offline API documentation browser.
 1. [Workrave](http://www.workrave.org/) - Repetitive Strain Injury prevention tool.
+1. [Zeal](https://zealdocs.org/) - Simple offline API documentation browser.
 
 ## Requirements
 
