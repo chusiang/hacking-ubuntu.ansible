@@ -54,23 +54,8 @@
     state: present
   tags: zeal
 
-# NixNote2.
-- name: add apt key of nixnote2
-  become: true
-  apt_key:
-    keyserver: "{{ apt_keyserver }}"
-    id: AF3D90CFFDB12616A844CD229A66B34BAF11ADDE
-  tags: nixnote2
-
-- name: add apt repository of nixnote2
-  become: true
-  apt_repository:
-    repo: "deb http://ppa.launchpad.net/nixnote/nixnote2-daily/ubuntu {{ ansible_distribution_release }} main"
-    state: present
-  tags: nixnote2
-
 # WineHQ.
-- name: add apt key of winehq 
+- name: add apt key of winehq
   become: true
   apt_key:
     keyserver: "{{ apt_keyserver }}"
