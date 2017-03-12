@@ -1,0 +1,47 @@
+brew_packages:
+  - ag
+  - ansible
+  - autojump
+  - bash-completion
+  - cmake
+  - docker-completion
+  - gcal
+  - git
+  - git-flow
+  - htop
+  - mosh
+  - postgresql
+  - redis
+  - ssh-copy-id
+  - tmate
+  - tmux
+  - vagrant-completion
+  - vim
+
+brew_cask_packages:
+  - appcleaner
+  - atom
+  - calibre
+  - docker
+  - firefox
+  - firefoxnightly
+  - freemind
+  - google-chrome
+  - gpgtools
+  - keka
+  - libreoffice
+  - libreoffice-language-pack
+  - macdown
+  - macvim
+  - obs
+  - skype
+  - sourcetree
+  - thunderbird
+  - vagrant
+  - vlc
+    
+# need manual install package.
+# - 1password
+# - docker
+# - virtualbox
+
