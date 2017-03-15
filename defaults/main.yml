@@ -35,6 +35,8 @@ apt_desktop_packages:
   - chromium-browser
   - compiz-plugins-extra
   - compizconfig-settings-manager
+  - easytag
+  - easytag-nautilus
   - fbreader
   - gcin
   - gcin-qt5-immodule
@@ -44,6 +46,7 @@ apt_desktop_packages:
   - sound-juicer
   - terminator
   - ttf-mscorefonts-installer
+  - ubuntu-restricted-extras
   - vim-gnome
   - vlc
   - workrave
