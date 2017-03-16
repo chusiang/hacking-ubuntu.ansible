@@ -29,6 +29,7 @@ apt_console_packages:
   - tree
   - urlview
   - w3m
+  - whois
 
 apt_desktop_packages:
   - calibre
@@ -40,6 +41,7 @@ apt_desktop_packages:
   - fbreader
   - gcin
   - gcin-qt5-immodule
+  - gimp
   - seahorse-nautilus
   - shutter
   - sm
