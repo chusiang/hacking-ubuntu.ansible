@@ -1,6 +1,6 @@
-# Ansible Playbook: Ubuntu Desktop
+# Ansible Playbook: Hacking Ubuntu
 
-An Ansible playbook of setup Ubuntu Desktop GNU/Linux.
+An Ansible playbook of quick setup, config my workstation of Ubuntu (Desktop) GNU/Linux.
 
 - Ubuntu 16.04
 - Lightdm
@@ -56,7 +56,13 @@ gcin_liu_table_path: "files/boshiamy-gcin.tar.gz"
 - chusiang.switch-apt-mirror
 - chusiang.vim-and-vi-mode
 
-## Example Playbook
+## Usage
+
+- Get other Ansible Roles.
+
+  ```
+  $ make init
+  ```
 
 - Full setup.
 
