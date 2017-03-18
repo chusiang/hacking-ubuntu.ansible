@@ -17,7 +17,7 @@ Applications:
 1. [GIMP](http://www.gimp.org/) - The GNU Image Manipulation Program.
 1. [GVim](http://www.vim.org/) - Vi IMproved - enhanced vi editor - with GNOME2 GUI.
 1. [Gcin](http://hyperrate.com/dir.php?eid=67) - GTK+ based input method for Chinese users.
-1. ~~[NixNote2](https://github.com/baumgarr/nixnote2)~~ - An unofficial Evernote client for Linux.
+1. ~~[NixNote2](https://github.com/baumgarr/nixnote2)~~ - An unofficial Evernote client for Linux. (refs. [bbc8a42](https://github.com/chusiang/hacking-ubuntu.ansible/commit/bbc8a42b952d03e0d7f9941d2a5a700b746901df))
 1. [Shutter](http://shutter-project.org/) - A feature-rich screenshot program.
 1. [Sound Juicer](https://github.com/GNOME/sound-juicer) - GNOME CD Ripper.
 1. [Terminator](https://gnometerminator.blogspot.tw/)
