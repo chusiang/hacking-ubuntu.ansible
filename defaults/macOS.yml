@@ -3,29 +3,36 @@ brew_packages:
   - ansible
   - autojump
   - bash-completion
+  - calibre
   - cmake
   - docker-completion
+  - freemind
   - gcal
   - git
   - git-flow
+  - glib
   - htop
+  - irssi
   - mosh
+  - pandoc
   - postgresql
   - redis
+  - sdcv
   - ssh-copy-id
+  - tig
   - tmate
   - tmux
+  - tree
   - vagrant-completion
   - vim
+  - w3m
 
 brew_cask_packages:
+  - android-file-transfer
   - appcleaner
   - atom
-  - calibre
-  - docker
   - firefox
   - firefoxnightly
-  - freemind
   - google-chrome
   - gpgtools
   - keka
@@ -33,12 +40,15 @@ brew_cask_packages:
   - libreoffice-language-pack
   - macdown
   - macvim
+  - mysqlworkbench
   - obs
   - skype
   - sourcetree
   - thunderbird
   - vagrant
+  - vagrant-manager
   - vlc
+  - xquartz
     
 # need manual install package.
 # - 1password

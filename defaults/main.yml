@@ -30,6 +30,8 @@ apt_console_packages:
   - urlview
   - w3m
   - whois
+  # 不是每個環境裝了 Virtualbox 都可以動的 …。
+  #- virtualbox
 
 apt_desktop_packages:
   - calibre
