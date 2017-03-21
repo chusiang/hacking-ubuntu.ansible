@@ -25,6 +25,7 @@ apt_console_packages:
   - sdcv
   - signing-party
   - software-properties-common
+  - tig
   - tmux
   - tree
   - urlview

@@ -26,6 +26,7 @@ brew_packages:
   - vagrant-completion
   - vim
   - w3m
+  - tig
 
 brew_cask_packages:
   - android-file-transfer
