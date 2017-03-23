@@ -1,7 +1,7 @@
 ---
 
 # Install packages with apt.
-apt_console_packages:
+apt_server_packages:
   - ack-grep
   - apt-transport-https
   - aptitude
@@ -55,6 +55,34 @@ apt_desktop_packages:
   - vim-gnome
   - vlc
   - workrave
+
+# Install packages with yum.
+yum_server_packages:
+  - epel-release
+  - ack
+  - autojump
+  - gcc
+  - gcc-c++
+  - make
+  - openssl-devel
+  - ca-certificates
+  - cmake
+  - curl
+  - ctags
+  - gitflow
+  - irssi
+  - htop
+  - make
+  - mosh
+  - opencc
+  - python-devel
+  - python2-pip
+  - tig
+  - tmux
+  - urlview
+  - tree
+  - w3m
+  - whois
 
 pip_packages:
   - ansible-lint

@@ -3,7 +3,7 @@
 # apt
 - name: install apt packages of console
   become: true
-  apt: name={{ apt_console_packages }} state=present
+  apt: name={{ apt_server_packages }} state=present
 
 # pip
 - name: upgrade the pip
