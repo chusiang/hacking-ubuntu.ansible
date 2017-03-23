@@ -1,0 +1,53 @@
+---
+
+# disable the selinux.
+- lineinfile:
+    path: /etc/selinux/config
+    regexp: '^SELINUX='
+    line: 'SELINUX=enforcing'
+
+# yum
+- name: install yum packages of epel
+  become: true
+  yum: name=epel-release state=present
+
+- name: install yum packages of server
+  become: true
+  yum: name={{ yum_server_packages }} state=present
+
+# pip
+- name: upgrade the pip
+  become: true
+  command: pip install --upgrade pip
+  tags: pip
+
+- name: install pip packages for console
+  become: true
+  pip: name={{ pip_packages }} state=present
+  tags: pip
+
+
+# Docker.
+- name: add yum repository of docker engine
+  become: true
+  yum_repository:
+    name: docker-engine
+    baseurl: "https://download.docker.com/linux/centos/{{ ansible_distribution_major_version }}/source/stable"
+    gpgkey: https://download.docker.com/linux/centos/gpg
+    gpgcheck: yes
+    state: present
+  tags: docker
+
+- name: install docker-engine with yum
+  become: true
+  yum:
+    name: docker-ce
+    state: present
+  tags: docker
+
+- name: setup user permission for docker
+  become: true
+  command: usermod -aG docker "{{ ansible_user_id }}"
+  tags: docker
+
+# vim: ft=ansible :
