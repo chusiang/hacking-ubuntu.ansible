@@ -26,11 +26,14 @@ apt_console_packages:
   - sdcv
   - signing-party
   - software-properties-common
+  - tig
   - tmux
   - tree
   - urlview
   - w3m
   - whois
+  # 不是每個環境裝了 Virtualbox 都可以動的 …。
+  #- virtualbox
 
 apt_desktop_packages:
   - calibre
