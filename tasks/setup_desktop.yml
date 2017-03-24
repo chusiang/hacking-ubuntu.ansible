@@ -71,9 +71,11 @@
 - name: copy the bash_completion of vagrant
   become: true
   copy:
-    src: files/vagrant.bash_completion
+    src: files/vagrant-completion.bash
     dest: "/etc/bash_completion.d/vagrant"
-  tags: vagrant
+  tags:
+    - bash
+    - vagrant
 
 # WineHQ.
 - name: add apt key of winehq

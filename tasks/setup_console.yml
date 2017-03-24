@@ -16,6 +16,16 @@
   pip: name={{ pip_packages }} state=present
   tags: pip
 
+  # git-flow
+- name: copy the bash_completion of git-flow
+  become: true
+  copy:
+    src: files/git-flow-completion.bash
+    dest: "/etc/bash_completion.d/git-flow"
+  tags:
+    - bash
+    - git
+
 # Docker.
 - name: add apt key of docker engine
   become: true
