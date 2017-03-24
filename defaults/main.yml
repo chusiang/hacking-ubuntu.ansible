@@ -10,6 +10,7 @@ apt_console_packages:
   - build-essential
   - ca-certificates
   - cmake
+  - cowsay
   - curl
   - exuberant-ctags
   - git-flow
@@ -46,10 +47,13 @@ apt_desktop_packages:
   - shutter
   - sm
   - sound-juicer
+  - ssmtp
   - terminator
   - ttf-mscorefonts-installer
   - ubuntu-restricted-extras
   - vim-gnome
+  - virtualbox
+  - virtualbox-ext-pack
   - vlc
   - workrave
 
@@ -57,6 +61,7 @@ pip_packages:
   - ansible-lint
   - speedtest-cli
   - virtualenv
+  - docker-compose
 
 franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 
