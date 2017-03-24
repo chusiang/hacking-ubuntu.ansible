@@ -43,19 +43,4 @@
   command: usermod -aG docker "{{ ansible_user_id }}"
   tags: docker
 
-# Vagrant
-- name: get latest vagrant from official
-  get_url:
-    url: "{{ vagrant_deb_url }}"
-    dest: /tmp/vagrant_x86_64.deb
-    checksum: "sha256:{{ vagrant_deb_sha256 }}"
-  tags: vagrant
-
-- name: install vagrant with deb file
-  become: true
-  apt:
-    deb: /tmp/vagrant_x86_64.deb
-  tags: vagrant
-
-
 # vim: ft=ansible :
