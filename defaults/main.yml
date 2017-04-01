@@ -76,8 +76,8 @@ moedict_tarball_url: "https://github.com/racklin/moedict-desktop/releases/downlo
 moedict_tarball_sha256: "97a9e778656e9b124d8acb3b2eaea22d"
 
 # vagrant
-vagrant_deb_sha256: "52ebd6aa798582681d0f1e008982c709136eeccd668a8e8be4d48a1f632de7b8"
-vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.2/vagrant_1.9.2_x86_64.deb"
+vagrant_deb_sha256: "faff6befacc7eed3978b4b71f0dbb9c135c01d8a4d13236bda2f9ed53482d2c4"
+vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.3/vagrant_1.9.3_x86_64.deb"
 
 # revision of vimrc.
 vimrc_reversion: "feature/21_YCM_n_UltiSnips"
