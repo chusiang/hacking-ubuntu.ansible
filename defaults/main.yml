@@ -16,9 +16,11 @@ apt_console_packages:
   - git-flow
   - htop
   - irssi
+  - libavahi-compat-libdnssd1
   - make
   - mosh
   - opencc
+  - openssh-server
   - python-apt
   - python-dev
   - python-gpgme
