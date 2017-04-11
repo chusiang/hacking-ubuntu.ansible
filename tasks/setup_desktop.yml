@@ -54,6 +54,29 @@
     state: present
   tags: zeal
 
+# Vagrant
+- name: get latest vagrant from official
+  get_url:
+    url: "{{ vagrant_deb_url }}"
+    dest: /tmp/vagrant_x86_64.deb
+    checksum: "sha256:{{ vagrant_deb_sha256 }}"
+  tags: vagrant
+
+- name: install vagrant with deb file
+  become: true
+  apt:
+    deb: /tmp/vagrant_x86_64.deb
+  tags: vagrant
+
+- name: copy the bash_completion of vagrant
+  become: true
+  copy:
+    src: files/vagrant-completion.bash
+    dest: "/etc/bash_completion.d/vagrant"
+  tags:
+    - bash
+    - vagrant
+
 # WineHQ.
 - name: add apt key of winehq
   become: true
@@ -82,7 +105,6 @@
   apt: name={{ item }} state=present
   with_items:
     - dropbox
-    - nixnote2
     - winehq-staging
     - zeal
 

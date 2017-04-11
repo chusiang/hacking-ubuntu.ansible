@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install ansible.
-sudo apt-get install -y python-software-properties software-properties-common
+sudo apt-get install -y python-software-properties software-properties-common make
 sudo add-apt-repository -y ppa:ansible/ansible; sudo apt-get update
 sudo apt-get install -y ansible
 

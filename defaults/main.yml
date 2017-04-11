@@ -10,14 +10,17 @@ apt_server_packages:
   - build-essential
   - ca-certificates
   - cmake
+  - cowsay
   - curl
   - exuberant-ctags
   - git-flow
   - htop
   - irssi
+  - libavahi-compat-libdnssd1
   - make
   - mosh
   - opencc
+  - openssh-server
   - python-apt
   - python-dev
   - python-gpgme
@@ -32,10 +35,9 @@ apt_server_packages:
   - w3m
   - wget
   - whois
-  # 不是每個環境裝了 Virtualbox 都可以動的 …。
-  #- virtualbox
 
 apt_desktop_packages:
+  - audacious
   - calibre
   - chromium-browser
   - compiz-plugins-extra
@@ -50,10 +52,13 @@ apt_desktop_packages:
   - shutter
   - sm
   - sound-juicer
+  - ssmtp
   - terminator
   - ttf-mscorefonts-installer
   - ubuntu-restricted-extras
   - vim-gnome
+  - virtualbox
+  - virtualbox-ext-pack
   - vlc
   - workrave
 
@@ -89,6 +94,7 @@ pip_packages:
   - ansible-lint
   - speedtest-cli
   - virtualenv
+  - docker-compose
 
 franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 
@@ -101,8 +107,8 @@ moedict_tarball_url: "https://github.com/racklin/moedict-desktop/releases/downlo
 moedict_tarball_sha256: "97a9e778656e9b124d8acb3b2eaea22d"
 
 # vagrant
-vagrant_deb_sha256: "52ebd6aa798582681d0f1e008982c709136eeccd668a8e8be4d48a1f632de7b8"
-vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.2/vagrant_1.9.2_x86_64.deb"
+vagrant_deb_sha256: "faff6befacc7eed3978b4b71f0dbb9c135c01d8a4d13236bda2f9ed53482d2c4"
+vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.3/vagrant_1.9.3_x86_64.deb"
 
 # revision of vimrc.
 vimrc_reversion: "master"
