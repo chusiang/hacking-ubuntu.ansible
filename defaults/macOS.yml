@@ -51,6 +51,7 @@ brew_cask_packages:
   - vagrant
   - vagrant-manager
   - vlc
+  - xmind
   - xquartz
     
 # need manual install package.
