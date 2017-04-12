@@ -26,14 +26,14 @@ brew_packages:
   - vagrant-completion
   - vim
   - w3m
-  - tig
+  - wget
 
 brew_cask_packages:
   - android-file-transfer
   - appcleaner
   - atom
-  - firefox
-  - firefoxnightly
+  - firefox-esr
+  - firefoxdeveloperedition
   - google-chrome
   - gpgtools
   - keka
@@ -41,11 +41,13 @@ brew_cask_packages:
   - libreoffice-language-pack
   - macdown
   - macvim
+  - messenger
   - mysqlworkbench
   - obs
   - skype
   - sourcetree
   - thunderbird
+  - tunnelblick
   - vagrant
   - vagrant-manager
   - vlc
