@@ -12,6 +12,7 @@ brew_packages:
   - git-flow
   - glib
   - htop
+  - httpstat
   - irssi
   - mosh
   - pandoc
@@ -40,6 +41,7 @@ brew_cask_packages:
   - libreoffice
   - libreoffice-language-pack
   - macdown
+  - macpass
   - macvim
   - messenger
   - mysqlworkbench
@@ -53,7 +55,7 @@ brew_cask_packages:
   - vlc
   - xmind
   - xquartz
-    
+
 # need manual install package.
 # - 1password
 # - docker
