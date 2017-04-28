@@ -49,6 +49,7 @@ brew_cask_packages:
   - messenger
   - mysqlworkbench
   - obs
+  - robomongo
   - skype
   - sourcetree
   - thunderbird
