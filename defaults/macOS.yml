@@ -19,6 +19,7 @@ brew_packages:
   - packer-completion
   - pandoc
   - postgresql
+  - reattach-to-user-namespac
   - redis
   - sdcv
   - ssh-copy-id
