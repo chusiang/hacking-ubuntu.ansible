@@ -1,0 +1,45 @@
+---
+
+# Ubuntu
+
+# - server
+- name: include setup_console.yml
+  include: tasks/setup_console.yml
+  tags:
+    - server
+  when: ansible_pkg_mgr == "apt"
+
+- name: include config_server.yml
+  include: tasks/config_server.yml
+  tags:
+    - server
+  when: ansible_pkg_mgr == "apt"
+
+# - desktop
+- name: include setup_desktop.yml
+  include: tasks/setup_desktop.yml
+  tags:
+    - desktop
+  when: ansible_pkg_mgr == "apt"
+
+- name: include config_desktop.yml
+  include: tasks/config_desktop.yml
+  tags:
+    - desktop
+  when: ansible_pkg_mgr == "apt"
+
+# CentOS
+- name: install libselinux-python binary for Ansible to work
+  yum: name=libselinux-python state=present
+  when: ansible_pkg_mgr == "yum"
+
+#- name: delegate to SELINUX handling subtask, if necessary
+#  include: set-selinux.yml
+#  when: php_in_selinux is defined and php_in_selinux == true
+
+- name: delegate to YUM system for installation
+  include: setup_centos_server.yml
+  when: ansible_pkg_mgr == "yum"
+
+
+

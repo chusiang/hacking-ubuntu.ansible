@@ -33,7 +33,7 @@ Applications:
 ## Variables
 
 ```
-apt_console_packages:
+apt_server_packages:
   - ack-grep
   - apt-transport-https
   - aptitude

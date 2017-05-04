@@ -22,26 +22,10 @@
   tasks:
 
     # console
-    - name: include setup_console.yml
-      include: tasks/setup_console.yml
+    - name: include main.yml
+      include: tasks/main.yml
       tags:
         - console
-
-    - name: include config_console.yml
-      include: tasks/config_console.yml
-      tags:
-        - console
-
-    # desktop
-    - name: include setup_desktop.yml
-      include: tasks/setup_desktop.yml
-      tags:
-        - desktop
-
-    - name: include config_desktop.yml
-      include: tasks/config_desktop.yml
-      tags:
-        - desktop
 
   handlers:
     - name: restart tlp

@@ -9,13 +9,16 @@ brew_packages:
   - git
   - git-flow
   - glib
+  - gpg2
   - htop
+  - httpstat
   - irssi
   - mosh
   - packer
   - packer-completion
   - pandoc
   #- postgresql
+  - reattach-to-user-namespac
   - redis
   - sdcv
   - ssh-copy-id
@@ -28,6 +31,7 @@ brew_packages:
   - vim
   - vifm
   - w3m
+  - wget
 
 brew_cask_packages:
   - android-file-transfer
@@ -35,25 +39,31 @@ brew_cask_packages:
   - atom
   - bartender
   - calibre
-  - firefox
-  #- firefoxnightly
+  - firefox-esr
+  - firefoxdeveloperedition
   - google-chrome
   - gpgtools
   - iterm2
   - keka
+  - kindle
   - libreoffice
   - libreoffice-language-pack
   - macdown
+  - macpass
   - macvim
+  - messenger
   - mysqlworkbench
   - obs
+  - robomongo
   - skype
   - sourcetree
   - telegram
   - thunderbird
+  - tunnelblick
   - vagrant
   - vagrant-manager
   - vlc
+  - xmind
   - xquartz
   - packer
     

@@ -1,7 +1,7 @@
 ---
 
 # Install packages with apt.
-apt_console_packages:
+apt_server_packages:
   - ack-grep
   - apt-transport-https
   - aptitude
@@ -16,9 +16,11 @@ apt_console_packages:
   - git-flow
   - htop
   - irssi
+  - libavahi-compat-libdnssd1
   - make
   - mosh
   - opencc
+  - openssh-server
   - python-apt
   - python-dev
   - python-gpgme
@@ -31,6 +33,7 @@ apt_console_packages:
   - tree
   - urlview
   - w3m
+  - wget
   - whois
 
 apt_desktop_packages:
@@ -45,6 +48,8 @@ apt_desktop_packages:
   - gcin
   - gcin-qt5-immodule
   - gimp
+  - keepassx
+  - sdcv
   - seahorse-nautilus
   - shutter
   - sm
@@ -59,11 +64,40 @@ apt_desktop_packages:
   - vlc
   - workrave
 
+# Install packages with yum.
+yum_server_packages:
+  - epel-release
+  - ack
+  - autojump
+  - gcc
+  - gcc-c++
+  - make
+  - openssl-devel
+  - ca-certificates
+  - cmake
+  - curl
+  - ctags
+  - gitflow
+  - irssi
+  - htop
+  - make
+  - mosh
+  - opencc
+  - python-devel
+  - python2-pip
+  - tig
+  - tmux
+  - urlview
+  - tree
+  - w3m
+  - whois
+
 pip_packages:
   - ansible-lint
+  - docker-compose
+  - httpstat
   - speedtest-cli
   - virtualenv
-  - docker-compose
 
 franz_tarball_url: "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
 
@@ -80,7 +114,7 @@ vagrant_deb_sha256: "faff6befacc7eed3978b4b71f0dbb9c135c01d8a4d13236bda2f9ed5348
 vagrant_deb_url: "https://releases.hashicorp.com/vagrant/1.9.3/vagrant_1.9.3_x86_64.deb"
 
 # revision of vimrc.
-vimrc_reversion: "feature/21_YCM_n_UltiSnips"
+vimrc_reversion: "master"
 
 # tuxENV
 #tuxenv_git_url: "git@github.com:chusiang/tuxENV.git"
