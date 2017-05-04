@@ -49,6 +49,7 @@ apt_desktop_packages:
   - gcin-qt5-immodule
   - gimp
   - keepassx
+  - sdcv
   - seahorse-nautilus
   - shutter
   - sm
