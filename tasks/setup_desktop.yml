@@ -24,6 +24,21 @@
     - libreoffice-help-zh-tw
     - thunderbird-locale-zh-tw
 
+# Firefox ESR.
+- name: add apt key of firefox-esr
+  become: true
+  apt_key:
+    keyserver: "{{ apt_keyserver }}"
+    id: 4AB0F789CBA31744CC7DA76A8CF63AD3F06FC659
+  tags: firefox-esr
+
+- name: add apt repository of firefox-esr
+  become: true
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/jonathonf/firefox-esr/ubuntu {{ ansible_distribution_release }} main"
+    state: present
+  tags: firefox-esr
+
 # Dropbox
 - name: add apt key of dropbox
   become: true
@@ -104,6 +119,7 @@
   become: true
   apt: name={{ item }} state=present
   with_items:
+    - firefox-esr
     - dropbox
     - winehq-staging
     - zeal
@@ -198,5 +214,13 @@
     src: files/freemind.desktop
     dest: "/usr/share/applications/"
   tags: freemind
+
+# sdcv
+- name: create the sdcv directory
+  file:
+    path: "{{ ansible_user_dir }}/.stardict/dic/"
+    state: directory
+    mode: 0755
+  tags: sdcv
 
 # vim: ft=ansible :
