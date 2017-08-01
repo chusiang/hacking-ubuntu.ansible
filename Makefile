@@ -3,7 +3,7 @@
 main: run
 
 init:
-	if [ ! -d "ansible-retry" ]; then mkdir "ansible-retry"; fi
+	if [ ! -d "/tmp/ansible-retry/" ]; then mkdir "/tmp/ansible-retry/"; fi
 	ansible-galaxy install -f -p roles -r requirements.yml
 
 boot:
@@ -13,6 +13,6 @@ run:
 	vagrant provision
 
 clean:
-	rm -f setup.retry
+	rm -f setup.retry /tmp/ansible-retry
 	vagrant destroy
 
