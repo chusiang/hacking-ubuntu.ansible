@@ -1,7 +1,7 @@
 ---
 
 # apt
-- name: install apt packages of console
+- name: install apt packages of server
   become: true
   apt: name={{ apt_server_packages }} state=present
 
@@ -11,7 +11,7 @@
   command: pip install --upgrade pip
   tags: pip
 
-- name: install pip packages for console
+- name: install pip packages for server
   become: true
   pip: name={{ pip_packages }} state=present
   tags: pip

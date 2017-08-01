@@ -17,8 +17,8 @@
   hosts: local
 
   vars_files:
-    - vars/main.yml
     - defaults/main.yml
+    - vars/main.yml
 
   tasks:
     - name: include setup_thinkpad_t410.yml

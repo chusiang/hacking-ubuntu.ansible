@@ -73,7 +73,7 @@ gcin_liu_table_path: "files/boshiamy-gcin.tar.gz"
 - Only the console.
 
   ```
-  $ ansible-playbook setup.yml --tags="console"
+  $ ansible-playbook setup.yml --tags="server"
   ```
 
 ## License

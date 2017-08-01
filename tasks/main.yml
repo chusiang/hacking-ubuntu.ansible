@@ -3,8 +3,8 @@
 # Ubuntu
 
 # - server
-- name: include setup_console.yml
-  include: tasks/setup_console.yml
+- name: include setup_server.yml
+  include: tasks/setup_server.yml
   tags:
     - server
   when: ansible_pkg_mgr == "apt"

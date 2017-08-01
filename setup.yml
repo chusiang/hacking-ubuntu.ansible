@@ -20,12 +20,8 @@
     - defaults/main.yml
 
   tasks:
-
-    # console
     - name: include main.yml
       include: tasks/main.yml
-      tags:
-        - console
 
   handlers:
     - name: restart tlp
