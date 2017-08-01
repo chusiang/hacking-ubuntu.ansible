@@ -12,7 +12,7 @@
   hosts: local
 
   roles:
-    - chusiang.switch-apt-mirror
+    #- chusiang.switch-apt-mirror
     - chusiang.vim-and-vi-mode
 
   vars_files:
@@ -21,8 +21,8 @@
 
   tasks:
     # server
-    - name: include config_server.yml
-      include: tasks/config_server.yml
+    - name: include setup_server.yml
+      include: tasks/setup_server.yml
       tags:
         - server
 
