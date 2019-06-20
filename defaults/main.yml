@@ -23,7 +23,7 @@ apt_server_packages:
   - openssh-server
   - python-apt
   - python-dev
-  - python-gpgme
+  #- python-gpgme
   - python-pip
   - sdcv
   - signing-party
